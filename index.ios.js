@@ -9,7 +9,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableOpacity
 } from 'react-native';
 
 export default class FirstWords extends Component {
@@ -17,15 +18,15 @@ export default class FirstWords extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Hello Kids!
         </Text>
         <Text style={styles.instructions}>
-          To get started, edit index.ios.js
+          Welcome to your new adventures in words!
         </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Start</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -48,6 +49,14 @@ const styles = StyleSheet.create({
     color: '#333333',
     marginBottom: 5,
   },
+  button: {
+    backgroundColor: 'blue'
+    
+  },
+  buttonText: {
+    color: 'white',
+    fontSize: 50
+  }
 });
 
 AppRegistry.registerComponent('FirstWords', () => FirstWords);
