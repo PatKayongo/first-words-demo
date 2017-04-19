@@ -12,8 +12,13 @@ import {
   View,
   TouchableOpacity
 } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
 export default class FirstWords extends Component {
+  static navigationOptions = {
+    title: 'WOOHOO!'
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -31,6 +36,10 @@ export default class FirstWords extends Component {
     );
   }
 }
+
+const FirstWordsApp = StackNavigator({
+  Home: { screen: FirstWords }
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -59,4 +68,4 @@ const styles = StyleSheet.create({
   }
 });
 
-AppRegistry.registerComponent('FirstWords', () => FirstWords);
+AppRegistry.registerComponent('FirstWords', () => FirstWordsApp);
