@@ -1,8 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
 
 import React, { Component } from 'react';
 import {
@@ -17,7 +12,7 @@ import ImageView from './app/image-view';
 
 export default class FirstWords extends Component {
   static navigationOptions = {
-    title: 'WOOHOO!'
+    title: 'Avuxeni!'
   };
 
   constructor(props) {
@@ -25,9 +20,9 @@ export default class FirstWords extends Component {
 
     this.state = {
       items: [
-        { name: 'goat', image: require('./app/images/goat.png'), backgroundColor: '#F27C7E', textColour: 'white' },
-        { name: 'ball', image: require('./app/images/ball.png'), backgroundColor: '#ACC158', textColour: 'white' },
-        { name: 'tree', image: require('./app/images/tree.png'), backgroundColor: '#EBB749', textColour: 'white' },
+        { name: 'mbuti', image: require('./app/images/goat.png'), backgroundColor: '#F27C7E', textColour: 'white' },
+        { name: 'bolo', image: require('./app/images/ball.png'), backgroundColor: '#ACC158', textColour: 'white' },
+        { name: 'nsinya', image: require('./app/images/tree.png'), backgroundColor: '#EBB749', textColour: 'white' },
       ]
     }
   }
@@ -38,14 +33,14 @@ export default class FirstWords extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Hello Kids!
+          Avuxeni Vana!
         </Text>
         <Text style={styles.instructions}>
           Welcome to your new adventures in words!
         </Text>
 
         <TouchableOpacity style={styles.button} onPress={() => navigate('Image', { items: this.state.items, index: 0 } )} >
-          <Text style={styles.buttonText}>Start</Text>
+          <Text style={styles.buttonText}>sungula</Text>
         </TouchableOpacity>
       </View>
     );
@@ -62,25 +57,31 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#EBE994',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 50,
     textAlign: 'center',
     margin: 10,
   },
   instructions: {
     textAlign: 'center',
-    color: '#333333',
+    color: '#F27C7E',
     marginBottom: 5,
+    fontSize: 20
   },
   button: {
-    backgroundColor: 'blue'
+    backgroundColor: '#669D89',
+    width: 120,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: 20,
     
   },
   buttonText: {
     color: 'white',
-    fontSize: 50
+    fontSize: 30
   }
 });
 

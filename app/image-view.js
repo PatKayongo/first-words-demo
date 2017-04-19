@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 export default class ImageView extends Component {
 	static navigationOptions = ({ navigation }) => ({
@@ -12,17 +12,43 @@ export default class ImageView extends Component {
 		const { navigate } = this.props.navigation;
 
 		return (
-			<View style={{ backgroundColor: currentItem.backgroundColor, flex: 1 }}>
-				<Image source={currentItem.image} />
-				<Text style={{ color: currentItem.textColour}}>{ currentItem.name }</Text>
+			<View style={ [styles.container, { backgroundColor: currentItem.backgroundColor }]}>
+				<View>
+					<Image resizeMode='contain' source={currentItem.image} />
+				</View>
+				<Text style={[ styles.name, { color: currentItem.textColour}]}>{ currentItem.name }</Text>
 				
 				{
 					(params.index < (params.items.length - 1)) &&
-						<TouchableOpacity onPress={() => navigate('Image', { items: params.items, index: params.index + 1 } )}>
-							<Text>Next</Text>
+						<TouchableOpacity style={styles.button} onPress={() => navigate('Image', { items: params.items, index: params.index + 1 } )}>
+							<Text style={styles.buttonText}>Next</Text>
 						</TouchableOpacity>
 				}
 			</View>
 		)
 	}
 }
+
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		flexDirection: 'column',
+		alignItems: 'center'
+	},
+	name: {
+		fontSize: 50,
+		fontWeight: 'bold',
+		marginTop: 10
+	},
+	button: {
+		marginTop: 20,
+		backgroundColor: '#EBE994',
+		width: 90,
+		height: 40,
+		alignItems: 'center',
+		justifyContent: 'center'
+	},
+	buttonText: {
+		fontSize: 20
+	}
+})
